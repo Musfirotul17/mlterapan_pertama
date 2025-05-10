@@ -247,15 +247,19 @@ F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
 ### 📈 Analisis Hasil Evaluasi
 
 - **Logistic Regression**
+  
   menunjukkan performa generalisasi yang baik. Meskipun memiliki akurasi train yang lebih rendah dari model lain, akurasi test-nya adalah yang tertinggi (95.98%).
 ![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/logistic%20regression.png?raw=true)
 - **K-Nearest Neighbors**
+  
  sedikit overfitting, dengan perbedaan antara train dan test accuracy (97.25% vs 94.13%).
 ![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/knn.png?raw=true)
 - **Decision Tree**
+  
    menunjukkan overfitting yang kuat, dengan train accuracy sangat tinggi (99.77%) namun penurunan akurasi pada data test (94.74%).
 ![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/decisiontree.png?raw=true)
 - **Random Forest**
+  
    mengatasi overfitting yang terjadi pada Decision Tree. Dengan train accuracy 99.77% dan test accuracy 95.52%, model ini menunjukkan keseimbangan dan performa evaluasi yang baik secara keseluruhan.
 ![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/randomforest.png?raw=true)
 ---
