@@ -79,6 +79,7 @@ Terdapat lebih banyak data untuk Male (1783) dibandingkan Female (1450).
 Visualisasi ini memberikan wawasan mengenai distribusi fitur-fitur seperti panjang rambut, lebar dahi, hidung lebar, dan lainnya untuk masing-masing gender. Hal ini sangat berguna untuk mengevaluasi pola dan hubungan antara fitur dan gender.
 
 **Kondisi Data:**
+
 Dataset ini terdiri dari total (jumlah baris belum disebutkan) dan 8 kolom fitur, yang masing-masing merepresentasikan karakteristik wajah dan label jenis kelamin. Berikut ini adalah penjelasan kondisi data:
 
 1. Jumlah Kolom dan Variasi Nilai
@@ -245,13 +246,17 @@ F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
 
 ### 📈 Analisis Hasil Evaluasi
 
-- **Logistic Regression** menunjukkan performa generalisasi yang baik. Meskipun memiliki akurasi train yang lebih rendah dari model lain, akurasi test-nya adalah yang tertinggi (95.98%).
+- **Logistic Regression**
+  menunjukkan performa generalisasi yang baik. Meskipun memiliki akurasi train yang lebih rendah dari model lain, akurasi test-nya adalah yang tertinggi (95.98%).
 ![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/logistic%20regression.png?raw=true)
-- **K-Nearest Neighbors** sedikit overfitting, dengan perbedaan antara train dan test accuracy (97.25% vs 94.13%).
+- **K-Nearest Neighbors**
+ sedikit overfitting, dengan perbedaan antara train dan test accuracy (97.25% vs 94.13%).
 ![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/knn.png?raw=true)
-- **Decision Tree** menunjukkan overfitting yang kuat, dengan train accuracy sangat tinggi (99.77%) namun penurunan akurasi pada data test (94.74%).
+- **Decision Tree**
+   menunjukkan overfitting yang kuat, dengan train accuracy sangat tinggi (99.77%) namun penurunan akurasi pada data test (94.74%).
 ![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/decisiontree.png?raw=true)
-- **Random Forest** mengatasi overfitting yang terjadi pada Decision Tree. Dengan train accuracy 99.77% dan test accuracy 95.52%, model ini menunjukkan keseimbangan dan performa evaluasi yang baik secara keseluruhan.
+- **Random Forest**
+   mengatasi overfitting yang terjadi pada Decision Tree. Dengan train accuracy 99.77% dan test accuracy 95.52%, model ini menunjukkan keseimbangan dan performa evaluasi yang baik secara keseluruhan.
 ![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/randomforest.png?raw=true)
 ---
 
