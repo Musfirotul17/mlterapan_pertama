@@ -272,8 +272,6 @@ Model terbaik yang dipilih adalah **Random Forest Classifier**, karena:
 - Memperoleh nilai precision, recall, dan F1-score yang tinggi dan seimbang.
 - Mampu menghindari overfitting yang terlihat pada Decision Tree.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
 
 **---Ini adalah bagian akhir laporan---**
 
