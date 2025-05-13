@@ -65,16 +65,16 @@ Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Distribusi Gender :Untuk mengetahui distribusi data berdasarkan gender, kita dapat menggunakan bar chart dan pie chart untuk memvisualisasikan frekuensi masing-masing kategori gender.
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/visualisasi%20pie%20dan%20bar%20chart.png?raw=true)
+![Visualisasi](./assets/gender_chart.png)
 Terdapat lebih banyak data untuk Male (1783) dibandingkan Female (1450).
 - Distribusi Fitur Berdasarkan Gender : Untuk melihat perbedaan distribusi masing-masing fitur berdasarkan gender, kita dapat menggunakan count plot yang menunjukkan jumlah kategori untuk setiap kolom dibandingkan dengan gender.
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/forehead%20height%20bar%20chart.png?raw=true)
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/forehead%20with%20cm%20bar%20chart.png?raw=true)
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/hair%20bar%20chart.png?raw=true)
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/lips%20thin.png?raw=true)
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/nose%20bar%20chart.png?raw=true)
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/nose%20long%20bar%20chart.png?raw=true)
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/nose%20to%20lips.png?raw=true)
+![Analisis Per Fitur](./assets/gender1.png)
+![Analisis Per Fitur](./assets/gender2.png)
+![Analisis Per Fitur](./assets/gender3.png)
+![Analisis Per Fitur](./assets/gender4.png)
+![Analisis Per Fitur](./assets/gender5.png)
+![Analisis Per Fitur](./assets/gender6.png)
+![Analisis Per Fitur](./assets/gender7.png)
 
 Visualisasi ini memberikan wawasan mengenai distribusi fitur-fitur seperti panjang rambut, lebar dahi, hidung lebar, dan lainnya untuk masing-masing gender. Hal ini sangat berguna untuk mengevaluasi pola dan hubungan antara fitur dan gender.
 
@@ -99,31 +99,31 @@ Hal ini menunjukkan bahwa sebagian besar fitur bersifat biner, kecuali forehead_
 
 2. Data Duplikat
 
-Ditemukan sejumlah duplikat dalam dataset (df.duplicated().sum()), namun nilai pastinya belum disebutkan. Duplikat ini telah berhasil dihapus menggunakan df.drop_duplicates() untuk memastikan setiap baris data bersifat unik.
+Ditemukan sejumlah duplikat dalam dataset (df.duplicated().sum()), namun nilai pastinya belum disebutkan.
 
 3. Missing Value
 
-Setelah penghapusan duplikat, pemeriksaan df.isnull().sum() menunjukkan tidak ada nilai yang hilang (missing values) pada seluruh kolom.
+Pemeriksaan df.isnull().sum() menunjukkan tidak ada nilai yang hilang (missing values) pada seluruh kolom.
 
 **Kesimpulan Awal dari EDA:**
 
 - Kolom gender menunjukkan distribusi yang lebih banyak untuk Male daripada Female.
 - Setiap fitur seperti long_hair, nose_wide, dan distance_nose_to_lip_long memiliki distribusi yang berbeda pada masing-masing gender. Misalnya, "long hair" cenderung lebih banyak ditemukan pada Female, sementara "wide nose" lebih sering muncul pada Male.
 
-**Keterangan Tambahan**:
-Penghapusan data duplikat dan missing values diterapkan pada tahap ini dengan tujuan agar hasil visualisasi lebih akurat pada EDA.
-
 ## Data Preparation
-1. Memisahkan fitur (input) dan target (output)
+1. Menghapus data duplikat
+Proses :seperti yang sudah di cari dalam EDA bahwa terdapat 1768 data duplikat. Hal ini telah berhasil dihapus menggunakan df.drop_duplicates()
+Alasan : Fungsinya untuk memastikan setiap baris data bersifat unik.
+2. Memisahkan fitur (input) dan target (output)
 Proses: Menyalin DataFrame asli, lalu memisahkan kolom-kolom fitur (X) dari target (y), yaitu kolom gender.
 Alasan: Pemisahan ini penting agar fitur dan label diproses secara terpisah, sesuai kebutuhan algoritma supervised learning.
-2. Membagi dataset menjadi data latih dan data uji
+3. Membagi dataset menjadi data latih dan data uji
 Proses: Dataset dibagi menjadi 80% untuk training dan 20% untuk testing.
 Alasan: Untuk menghindari overfitting dan mengukur performa model secara objektif menggunakan data yang belum pernah dilatih.
-3. Mengubah label kategori ‘gender’ menjadi bentuk numerik
+4. Mengubah label kategori ‘gender’ menjadi bentuk numerik
 Proses: Label gender diubah dari bentuk string (seperti 'Male', 'Female') menjadi angka menggunakan LabelEncoder.
 Alasan: Algoritma machine learning hanya bisa menerima data numerik, jadi kolom kategori perlu dikodekan terlebih dahulu.
-4.  Melakukan normalisasi menggunakan MinMaxScaler
+5.  Melakukan normalisasi menggunakan MinMaxScaler
 Proses: Semua fitur diubah ke rentang 0–1 menggunakan MinMaxScaler.
 Alasan: Scaling diperlukan agar fitur yang memiliki skala berbeda tidak mendominasi proses pelatihan model, terutama penting untuk algoritma yang berbasis jarak atau bobot.
 
@@ -249,19 +249,19 @@ F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
 - **Logistic Regression**
   
   menunjukkan performa generalisasi yang baik. Meskipun memiliki akurasi train yang lebih rendah dari model lain, akurasi test-nya adalah yang tertinggi (95.98%).
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/logistic%20regression.png?raw=true)
+![Logistic Regression Confusion Matrix](./assets/lr.png)
 - **K-Nearest Neighbors**
   
  sedikit overfitting, dengan perbedaan antara train dan test accuracy (97.25% vs 94.13%).
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/knn.png?raw=true)
+![KNN](./assets/knn.png)
 - **Decision Tree**
   
    menunjukkan overfitting yang kuat, dengan train accuracy sangat tinggi (99.77%) namun penurunan akurasi pada data test (94.74%).
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/decisiontree.png?raw=true)
+![LDescision Tree](./assets/dtree.png)
 - **Random Forest**
   
    mengatasi overfitting yang terjadi pada Decision Tree. Dengan train accuracy 99.77% dan test accuracy 95.52%, model ini menunjukkan keseimbangan dan performa evaluasi yang baik secara keseluruhan.
-![alt text](https://github.com/Musfirotul17/mlterapan_satu/blob/main/randomforest.png?raw=true)
+![Random Forest](./assets/rf.png)
 ---
 
 ### ✅ Model Terbaik
@@ -271,6 +271,29 @@ Model terbaik yang dipilih adalah **Random Forest Classifier**, karena:
 - Memiliki performa stabil dan konsisten di data train dan test.
 - Memperoleh nilai precision, recall, dan F1-score yang tinggi dan seimbang.
 - Mampu menghindari overfitting yang terlihat pada Decision Tree.
+
+### Hubungan Antara Evaluation dan Business Understanding
+
+🔍 Apakah model menjawab setiap Problem Statement?
+Bagaimana cara mengklasifikasikan gender berdasarkan fitur yang tersedia dengan akurasi tinggi?
+→ Evaluasi menunjukkan bahwa seluruh model mencapai tingkat akurasi yang sangat tinggi (>94%), dengan model Random Forest mencatat performa stabil antara data pelatihan dan pengujian. Ini menandakan bahwa klasifikasi gender dapat dilakukan dengan akurat berdasarkan fitur dataset.
+
+Algoritma klasifikasi mana yang memberikan performa terbaik?
+→ Dengan membandingkan Logistic Regression, KNN, Decision Tree, dan Random Forest, evaluasi menunjukkan bahwa Random Forest memberikan kombinasi terbaik dari akurasi, precision, recall, dan F1-score, sekaligus menghindari overfitting.
+
+Apakah model machine learning dapat digunakan sebagai baseline sistem klasifikasi gender?
+→ Model Random Forest yang terpilih, dengan performa seimbang dan stabil, layak dijadikan baseline. Tingkat akurasinya tinggi dan tidak menunjukkan tanda overfitting ekstrem, menjadikannya kandidat kuat untuk pengembangan sistem lebih lanjut.
+
+🎯 Apakah Goals tercapai?
+✅ Mengembangkan model klasifikasi → Berhasil dilakukan dengan 4 model berbeda dan evaluasi komprehensif.
+✅ Membandingkan algoritma → Sudah dilakukan secara mendalam, dengan tabel dan analisis visual.
+✅ Menyediakan evaluasi sebagai baseline → Hasil evaluasi lengkap (termasuk confusion matrix dan classification report) dapat dijadikan dasar bagi pengembangan sistem otomatis klasifikasi gender.
+
+📌 Apakah solusi yang dirancang berdampak?
+✅ Penerapan dan evaluasi 4 algoritma memberikan wawasan komparatif yang nyata mengenai kelebihan dan kekurangan masing-masing model.
+✅ Visualisasi confusion matrix (yang dilampirkan sebagai gambar) memperkuat pemahaman terhadap distribusi prediksi dan potensi bias antar gender.
+✅ Penggunaan metrik makro dan weighted average F1-score memastikan penilaian performa model yang adil dan sensitif terhadap ketidakseimbangan kelas.
+✅ Analisis overfitting pada Decision Tree dan mitigasinya oleh Random Forest membantu memilih model yang tidak hanya akurat tapi juga robust.
 
 
 **---Ini adalah bagian akhir laporan---**
